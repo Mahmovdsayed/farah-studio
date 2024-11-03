@@ -9,7 +9,6 @@ interface IProps { }
 
 const HeroSection = ({ }: IProps) => {
     useEffect(() => {
-
         window.scrollTo({ behavior: 'smooth', top: 0 })
 
     }, [])
