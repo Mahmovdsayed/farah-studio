@@ -1,16 +1,52 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Providers } from "@/Providers/Providers";
+import NavBar from "@/components/Layout/NavBar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+// Define Instrument_Serif font
+const instrumentSerifRegular = localFont({
+  src: "./fonts/Instrument_Serif/InstrumentSerif-Regular.ttf",
+  variable: "--font-instrument-serif-regular",
+  weight: "400",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const instrumentSerifItalic = localFont({
+  src: "./fonts/Instrument_Serif/InstrumentSerif-Italic.ttf",
+  variable: "--font-instrument-serif-italic",
+  weight: "400",
+  style: "italic",
+});
+
+// Define Space_Grotesk font
+const spaceGroteskLight = localFont({
+  src: "./fonts/Space_Grotesk/SpaceGrotesk-Light.ttf",
+  variable: "--font-space-grotesk-light",
+  weight: "300",
+});
+
+const spaceGroteskRegular = localFont({
+  src: "./fonts/Space_Grotesk/SpaceGrotesk-Regular.ttf",
+  variable: "--font-space-grotesk-regular",
+  weight: "400",
+});
+
+const spaceGroteskMedium = localFont({
+  src: "./fonts/Space_Grotesk/SpaceGrotesk-Medium.ttf",
+  variable: "--font-space-grotesk-medium",
+  weight: "500",
+});
+
+const spaceGroteskSemiBold = localFont({
+  src: "./fonts/Space_Grotesk/SpaceGrotesk-SemiBold.ttf",
+  variable: "--font-space-grotesk-semibold",
+  weight: "600",
+});
+
+const spaceGroteskBold = localFont({
+  src: "./fonts/Space_Grotesk/SpaceGrotesk-Bold.ttf",
+  variable: "--font-space-grotesk-bold",
+  weight: "700",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +62,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+          ${instrumentSerifRegular.variable} 
+          ${instrumentSerifItalic.variable} 
+          ${spaceGroteskLight.variable} 
+          ${spaceGroteskRegular.variable} 
+          ${spaceGroteskMedium.variable} 
+          ${spaceGroteskSemiBold.variable} 
+          ${spaceGroteskBold.variable} 
+          antialiased
+          bg-[#EEEBE1]
+          min-h-[100dvh]
+          overflow-x-hidden
+          text-[#2B2B2B]
+        `}
       >
-        {children}
+        <Providers>
+          <NavBar />
+          {children}
+        </Providers>
       </body>
     </html>
   );

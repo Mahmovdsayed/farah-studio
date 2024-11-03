@@ -3,19 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-instrument-serif-regular: var(--font-instrument-serif-regular);
+  --font-instrument-serif-italic: var(--font-instrument-serif-italic);
+  --font-space-grotesk-light: var(--font-space-grotesk-light);
+  --font-space-grotesk-regular: var(--font-space-grotesk-regular);
+  --font-space-grotesk-medium: var(--font-space-grotesk-medium);
+  --font-space-grotesk-semibold: var(--font-space-grotesk-semibold);
+  --font-space-grotesk-bold: var(--font-space-grotesk-bold);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk-regular), sans-serif;
 }
+
+
+/* .text-light {
+  font-family: var(--font-space-grotesk-light), sans-serif;
+}
+
+.text-medium {
+  font-family: var(--font-space-grotesk-medium), sans-serif;
+}
+
+.text-semibold {
+  font-family: var(--font-space-grotesk-semibold), sans-serif;
+} */
