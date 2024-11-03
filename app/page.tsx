@@ -4,8 +4,9 @@ import React from "react";
 const page = () => {
   return <>
     <main>
-      <div className="container mx-auto px-4 py-6">
+      <div className="container lg:w-[80%] mx-auto px-4 py-6 min-h-screen">
         <HeroSection />
+
       </div>
     </main>
   </>;

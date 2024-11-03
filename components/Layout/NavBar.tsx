@@ -6,7 +6,7 @@ import ButtonUi from "../Ui/ButtonUi";
 
 const NavBar = () => {
     return <>
-        <Navbar className="bg-transparent">
+        <Navbar className="bg-transparent ">
             <NavbarBrand>
                 <p className="text-2xl font-medium font-instrument-serif">Farah Studio</p>
             </NavbarBrand>
