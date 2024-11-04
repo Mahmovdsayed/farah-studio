@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
+import withPWA from "next-pwa";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  productionBrowserSourceMaps: false,
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV !== "development", // Remove console.log in production
+  },
 };
 
-export default nextConfig;
+export default withPWA({
+  dest: "public",
+  disable: process.env.NODE_ENV === "development",
+  register: true,
+  skipWaiting: true,
+})(nextConfig);
