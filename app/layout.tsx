@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "@/Providers/Providers";
 import NavBar from "@/components/Layout/NavBar";
+import { Analytics } from "@vercel/analytics/react";
 
 // Define Instrument_Serif font
 const instrumentSerifRegular = localFont({
@@ -114,6 +115,7 @@ export default function RootLayout({
         <Providers>
           <NavBar />
           {children}
+          <Analytics />
         </Providers>
       </body>
     </html>
