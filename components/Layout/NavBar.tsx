@@ -57,7 +57,7 @@ const NavBar = () => {
 
             </NavbarContent>
             <NavbarItem >
-                <ButtonUi text="Get in touch" />
+                <ButtonUi url="https://www.instagram.com/farahcreatesx/" text="Get in touch" />
             </NavbarItem>
             <NavbarMenu className="bg-[#EEEBE1] ">
                 {

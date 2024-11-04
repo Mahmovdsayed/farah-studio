@@ -143,7 +143,7 @@ const ProjectsSection = () => {
                         Latest projects
                     </h3>
                 </AnimatedItem>
-                <ButtonUi text="View more" />
+                <ButtonUi url="products" text="View more" />
             </div>
             <div className="">
                 <BentoGrid />
@@ -168,7 +168,7 @@ const ContactSection = () => {
             </AnimatedItem>
             <div className="flex items-center justify-center gap-2 mt-3">
                 <Button isIconOnly as={Link} className="bg-transparent border-black border-1 text-medium" radius="full" size="sm"><FaFacebookF /></Button>
-                <Button isIconOnly as={Link} className="bg-transparent border-black border-1 text-medium" radius="full" size="sm"><FaInstagram /></Button>
+                <Button isIconOnly as={Link} href="https://www.instagram.com/farahcreatesx/" target="_blank" className="bg-transparent border-black border-1 text-medium" radius="full" size="sm"><FaInstagram /></Button>
                 <Button isIconOnly as={Link} className="bg-transparent border-black border-1 text-medium" radius="full" size="sm"><FaBehance /></Button>
             </div>
             <ContactInfo />
