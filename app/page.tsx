@@ -6,7 +6,6 @@ const page = () => {
     <main>
       <div className="container lg:w-[80%] mx-auto px-4 py-6 min-h-screen">
         <HeroSection />
-
       </div>
     </main>
   </>;

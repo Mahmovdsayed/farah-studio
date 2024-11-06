@@ -14,8 +14,8 @@
 
 body {
   font-family: var(--font-space-grotesk-regular), sans-serif;
+  scroll-behavior: smooth;
 }
-
 
 /* .text-light {
   font-family: var(--font-space-grotesk-light), sans-serif;
@@ -28,3 +28,7 @@ body {
 .text-semibold {
   font-family: var(--font-space-grotesk-semibold), sans-serif;
 } */
+
+body::-webkit-scrollbar {
+  display: none;
+}
