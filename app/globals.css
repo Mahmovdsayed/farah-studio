@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sharp-sans-bold: "Sharp Sans Bold", sans-serif;
+  --font-sharp-sans-bold-italic: "Sharp Sans Bold Italic", sans-serif;
+  --font-sharp-sans-extra-bold: "Sharp Sans ExtraBold", sans-serif;
+  --font-sharp-sans-extra-bold-italic: "Sharp Sans ExtraBold Italic", sans-serif;
+  --font-sharp-sans-italic: "Sharp Sans Italic", sans-serif;
+  --font-sharp-sans-light: "Sharp Sans Light", sans-serif;
+  --font-sharp-sans-light-italic: "Sharp Sans Light Italic", sans-serif;
+  --font-sharp-sans-medium: "Sharp Sans Medium", sans-serif;
+  --font-sharp-sans-medium-italic: "Sharp Sans Medium Italic", sans-serif;
+  --font-sharp-sans-semi-bold: "Sharp Sans Semibold", sans-serif;
+  --font-sharp-sans-semi-bold-italic: "Sharp Sans Semibold Italic", sans-serif;
+  --font-sharp-sans-thin: "Sharp Sans Thin", sans-serif;
+  --font-sharp-sans-thin-italic: "Sharp Sans Thin Italic", sans-serif;
+  --font-RoustelRegular: "Roustel", sans-serif;
+}
+
+body {
+  font-family: var(--font-sharp-sans-light);
+}
+
+#textshadows {
+  text-shadow: #9747ff 0px 2px;
+}
+
+#imageShadow {
+  background-color: transparent;
+  box-shadow: 0 0 500px 50px rgba(156, 119, 183, 0.5);
+  border-radius: 50%;
+}
+
+.scrolling-tools {
+  display: flex;
+  width: max-content;
+  animation: scrolling 47s linear infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@layer utilities {
+  .bg-custom-gradient {
+    background: linear-gradient(47.29deg, #0f1110 4.94%, #241731 94.67%);
+  }
+}
