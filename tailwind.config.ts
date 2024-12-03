@@ -28,8 +28,7 @@ export default {
       fontFamily: {
         sharpSansBold: "var(--font-sharp-sans-bold)",
         sharpSansBoldItalic: "var(--font-sharp-sans-bold-italic)",
-        sharpSansExtraBold: "var(--font-sharp-sans-extra-bold)",
-        sharpSansExtraBoldItalic: "var(--font-sharp-sans-extra-bold-italic)",
+       
         sharpSansItalic: "var(--font-sharp-sans-italic)",
         sharpSansLight: "var(--font-sharp-sans-light)",
         sharpSansLightItalic: "var(--font-sharp-sans-light-italic)",

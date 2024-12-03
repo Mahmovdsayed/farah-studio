@@ -19,15 +19,7 @@ const sharpSansBoldItalic = localFont({
   variable: "--font-sharp-sans-bold-italic",
 });
 
-const sharpSansExtraBold = localFont({
-  src: "./fonts/SharpSansExtraBold.woff",
-  variable: "--font-sharp-sans-extra-bold",
-});
 
-const sharpSansExtraBoldItalic = localFont({
-  src: "./fonts/SharpSansExtraBoldItalic.woff",
-  variable: "--font-sharp-sans-extra-bold-italic",
-});
 
 const sharpSansItalic = localFont({
   src: "./fonts/SharpSansItalic.woff",
@@ -128,8 +120,7 @@ export default function RootLayout({
         className={`
           ${sharpSansBold.variable}
           ${sharpSansBoldItalic.variable}
-          ${sharpSansExtraBold.variable}
-          ${sharpSansExtraBoldItalic.variable}
+          
           ${sharpSansItalic.variable}
           ${sharpSansLight.variable}
           ${sharpSansLightItalic.variable}
