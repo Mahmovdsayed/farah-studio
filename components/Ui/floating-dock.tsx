@@ -48,7 +48,7 @@ const FloatingDockMobile = ({
     const [open, setOpen] = useState(false);
 
     return (
-        <div className={cn("fixed bottom-4 right-4 md:hidden z-40", className)}>
+        <div className={cn("fixed bottom-4 right-4 md:hidden", className)}>
             <AnimatePresence>
                 {open && (
                     <motion.div
