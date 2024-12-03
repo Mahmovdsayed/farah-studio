@@ -15,62 +15,62 @@ const sharpSansBold = localFont({
 });
 
 const sharpSansBoldItalic = localFont({
-  src: "./fonts/Sharp Sans Bold Italic.woff",
+  src: "./fonts/SharpSansBoldItalic.woff",
   variable: "--font-sharp-sans-bold-italic",
 });
 
 const sharpSansExtraBold = localFont({
-  src: "./fonts/Sharp Sans ExtraBold.woff",
+  src: "./fonts/SharpSansExtraBold.woff",
   variable: "--font-sharp-sans-extra-bold",
 });
 
 const sharpSansExtraBoldItalic = localFont({
-  src: "./fonts/Sharp Sans ExtraBold Italic.woff",
+  src: "./fonts/SharpSansExtraBoldItalic.woff",
   variable: "--font-sharp-sans-extra-bold-italic",
 });
 
 const sharpSansItalic = localFont({
-  src: "./fonts/Sharp Sans Italic.woff",
+  src: "./fonts/SharpSansItalic.woff",
   variable: "--font-sharp-sans-italic",
 });
 
 const sharpSansLight = localFont({
-  src: "./fonts/Sharp Sans Light.woff",
+  src: "./fonts/SharpSansLight.woff",
   variable: "--font-sharp-sans-light",
 });
 
 const sharpSansLightItalic = localFont({
-  src: "./fonts/Sharp Sans Light Italic.woff",
+  src: "./fonts/SharpSansLightItalic.woff",
   variable: "--font-sharp-sans-light-italic",
 });
 
 const sharpSansMedium = localFont({
-  src: "./fonts/Sharp Sans Medium.woff",
+  src: "./fonts/SharpSansMedium.woff",
   variable: "--font-sharp-sans-medium",
 });
 
 const sharpSansMediumItalic = localFont({
-  src: "./fonts/Sharp Sans Medium Italic.woff",
+  src: "./fonts/SharpSansMediumItalic.woff",
   variable: "--font-sharp-sans-medium-italic",
 });
 
 const sharpSansSemiBold = localFont({
-  src: "./fonts/Sharp Sans Semibold.woff",
+  src: "./fonts/SharpSansSemibold.woff",
   variable: "--font-sharp-sans-semi-bold",
 });
 
 const sharpSansSemiBoldItalic = localFont({
-  src: "./fonts/Sharp Sans Semibold Italic.woff",
+  src: "./fonts/SharpSansSemiboldItalic.woff",
   variable: "--font-sharp-sans-semi-bold-italic",
 });
 
 const sharpSansThin = localFont({
-  src: "./fonts/Sharp Sans Thin.woff",
+  src: "./fonts/SharpSansThin.woff",
   variable: "--font-sharp-sans-thin",
 });
 
 const sharpSansThinItalic = localFont({
-  src: "./fonts/Sharp Sans Thin Italic.woff",
+  src: "./fonts/SharpSansThinItalic.woff",
   variable: "--font-sharp-sans-thin-italic",
 });
 
