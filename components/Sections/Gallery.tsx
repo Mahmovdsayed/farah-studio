@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 import ButtonUi from "../Ui/ButtonUi";
 import { HiArrowSmallRight } from "react-icons/hi2";
 import GalleryCard from "../Ui/GalleryCard";
@@ -42,7 +42,7 @@ const Gallery = ({ }: IProps) => {
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: ".gallery-section",
-                    start: "top 100%", 
+                    start: "top 100%",
                     end: "bottom top",
                     scrub: true,
                 },
@@ -59,6 +59,8 @@ const Gallery = ({ }: IProps) => {
                         radius="full"
                         className="bg-[#5F5F5F4D] transition-all duration-500 text-white md:text-lg font-sharpSansSemiBold"
                         endContent={<HiArrowSmallRight />}
+                        href="/projects"
+                        as={Link}
                     >
                         View More
                     </Button>
