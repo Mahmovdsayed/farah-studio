@@ -4,10 +4,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "@/providers/Providers";
 import Header from "@/components/Layout/Header";
-import { Spotlight } from "@/components/Ui/Spotlight";
 import { FloatingDockDemo } from "@/components/Layout/FooterLinks";
 import SmoothScroll from "@/components/Layout/SmoothScroll";
 import Footer from "@/components/Layout/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const sharpSansBold = localFont({
   src: "./fonts/SharpSansBold.woff",
@@ -85,10 +85,8 @@ export const metadata: Metadata = {
     siteName: "Farah Studio",
     images: [
       {
-        url: "https://res.cloudinary.com/dxvpvtcbg/image/upload/v1730709793/j33trosxakvccmbmg9ct.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Farah Studio Overview"
+        url: "https://res.cloudinary.com/dtpsyi5am/image/upload/v1733762637/tfb58qvoa3xuudj4rjw9.jpg",
+        alt: "Farah Studio"
       }
     ],
     type: "website",
@@ -99,10 +97,8 @@ export const metadata: Metadata = {
     description: "Farah Studio is a one-man brand and website design studio that makes easy-to-use websites. We help businesses create websites without the need for complex coding.",
     images: [
       {
-        url: "https://res.cloudinary.com/dxvpvtcbg/image/upload/v1730709793/j33trosxakvccmbmg9ct.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Farah Studio Overview"
+        url: "https://res.cloudinary.com/dtpsyi5am/image/upload/v1733762637/tfb58qvoa3xuudj4rjw9.jpg",
+        alt: "Farah Studio"
       }
     ],
   },
@@ -140,13 +136,10 @@ export default function RootLayout({
           `}
       >
         <Providers>
-          {/* <Spotlight
-            className="-top-40 left-0 md:left-60 md:-top-20"
-            fill="#5A2582"
-          /> */}
           <Header />
           <SmoothScroll>
             {children}
+            <Analytics />
           </SmoothScroll>
           <FloatingDockDemo />
           <Footer />

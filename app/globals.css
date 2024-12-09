@@ -27,7 +27,7 @@ body {
 
 #imageShadow {
   background-color: transparent;
-  box-shadow: 0 0 500px 50px rgba(156, 119, 183, 0.5);
+  box-shadow: 0 0 500px 50px #9c77b780;
   border-radius: 50%;
 }
 

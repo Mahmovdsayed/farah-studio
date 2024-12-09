@@ -12,7 +12,7 @@ const Footer = ({ }: IProps) => {
             <div className="flex flex-col justify-center items-center md:items-center my-3 w-full">
                 <div className="footer-content flex flex-col items-center justify-center text-center gap-2">
                     <h3 className="font-sharpSansBold text-4xl md:text-5xl ">Get in touch</h3>
-                    <p className="font-sharpSansMedium text-sm md:text-xl ">Social Media, Motion Graphics <br /> and website designer</p>
+                    <p className="font-sharpSansMedium text-sm md:text-xl ">Social Media, Motion Graphics and website designer</p>
                     <span className="text-xs md:text-base ">Cairo, Egypt</span>
                 </div>
             </div>
