@@ -36,7 +36,7 @@ const Header = () => {
         },
     ];
     return <>
-        <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} position="sticky" isBlurred className="bg-transparent py-1">
+        <Navbar isMenuOpen={isMenuOpen} position="sticky" onMenuOpenChange={setIsMenuOpen} isBordered isBlurred className="bg-transparent py-1 z-50">
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}

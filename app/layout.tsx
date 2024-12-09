@@ -136,8 +136,8 @@ export default function RootLayout({
           `}
       >
         <Providers>
-          <Header />
           <SmoothScroll>
+            <Header />
             {children}
             <Analytics />
           </SmoothScroll>
