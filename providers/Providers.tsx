@@ -4,6 +4,7 @@ import LoadingScreen from '@/components/Layout/LoadingScreen';
 import { NextUIProvider } from '@nextui-org/react'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react';
+import { Toaster } from 'sonner';
 
 export function Providers({ children }: { children: React.ReactNode }) {
     const router = useRouter()
@@ -21,6 +22,13 @@ export function Providers({ children }: { children: React.ReactNode }) {
             <LoadingScreen />
         ) : (
             <NextUIProvider navigate={router.push}>
+                <Toaster
+                    duration={1000}
+                    position='top-center'
+                    theme={"dark"}
+
+                    expand={false}
+                />
                 {children}
             </NextUIProvider>
         )}

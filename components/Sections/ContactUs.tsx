@@ -6,11 +6,13 @@ import { Alert, Button, Checkbox, CheckboxGroup, Input, Link, Textarea } from "@
 import { RiSendPlaneFill } from "react-icons/ri";
 import * as Yup from 'yup';
 import { useFormik } from "formik";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 interface IProps { }
 
 const ContactUs = ({ }: IProps) => {
-
+    const router = useRouter()
     const validationSchema = Yup.object({
         name: Yup.string()
             .required("Name is required")
@@ -39,9 +41,12 @@ const ContactUs = ({ }: IProps) => {
         },
         validationSchema,
         onSubmit: (values: any) => {
-            console.log(values);
             Email(values.name, values.email, values.services.join(", "), values.projectInfo);
             formik.resetForm();
+            router.push("/")
+            toast.success("Your message has been sent successfully. We will get back to you shortly!", {
+                duration: 4000
+            });
         },
     })
 
