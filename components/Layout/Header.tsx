@@ -11,13 +11,16 @@ import {
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ButtonUi from "../Ui/ButtonUi";
 import { motion } from "framer-motion";
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [pathname]);
     const menuItemsmain = [
         {
             text: 'Home',
@@ -33,7 +36,7 @@ const Header = () => {
         },
     ];
     return <>
-        <Navbar onMenuOpenChange={setIsMenuOpen} position="sticky" isBlurred className="bg-transparent py-1">
+        <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} position="sticky" isBlurred className="bg-transparent py-1">
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -84,6 +87,7 @@ const Header = () => {
                                     className="w-full text-4xl uppercase font-sharpSansBold"
                                     href={item.link}
                                     size="lg"
+                                    onClick={() => setIsMenuOpen(false)}
                                 >
                                     {item.text}
                                 </Link>
