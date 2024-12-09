@@ -1,13 +1,30 @@
 "use client"
 
+import LoadingScreen from '@/components/Layout/LoadingScreen';
 import { NextUIProvider } from '@nextui-org/react'
 import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react';
 
 export function Providers({ children }: { children: React.ReactNode }) {
     const router = useRouter()
-    return (
-        <NextUIProvider navigate={router.push}>
-            {children}
-        </NextUIProvider>
-    )
+    const [loading, setLoading] = useState(true);
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+    }, []);
+
+    return <>
+        {loading ? (
+            <LoadingScreen />
+        ) : (
+            <NextUIProvider navigate={router.push}>
+                {children}
+            </NextUIProvider>
+        )}
+    </>
+
+
 }
