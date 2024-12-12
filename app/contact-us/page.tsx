@@ -21,6 +21,7 @@ export async function generateMetadata({
 
 }
 const page = () => {
+
     return <>
         <main className="min-h-[100dvh]">
             <div className="container mx-auto px-4 py-6">

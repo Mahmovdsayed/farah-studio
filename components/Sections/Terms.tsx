@@ -1,4 +1,5 @@
 'use client'
+import useVisitorTracker from "@/hooks/useVisitorTracker";
 import { motion } from "framer-motion";
 
 interface IProps { }
@@ -19,6 +20,7 @@ const Terms = ({ }: IProps) => {
         "Client is responsible for ensuring the accuracy of all content.",
         "The design may not be resold or altered without the designer's consent."
     ];
+    useVisitorTracker("/terms", "Terms");
 
     return <>
         <main className="min-h-[100dvh]">

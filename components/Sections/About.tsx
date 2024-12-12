@@ -1,11 +1,13 @@
 'use client'
 
+import useVisitorTracker from "@/hooks/useVisitorTracker";
 import { Image } from "@nextui-org/react";
 import { motion } from "framer-motion"; // Import framer-motion
 
 interface IProps { }
 
 const About = ({ }: IProps) => {
+    useVisitorTracker("/about","About");
     return (
         <>
             <div className="relative min-w-full flex justify-between flex-col md:flex-row p-4 mt-14 md:mt-24">

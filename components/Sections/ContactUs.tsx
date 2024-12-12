@@ -8,10 +8,13 @@ import * as Yup from 'yup';
 import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import useVisitorTracker from "@/hooks/useVisitorTracker";
 
 interface IProps { }
 
 const ContactUs = ({ }: IProps) => {
+    useVisitorTracker("/contact-us", "Contact Us");
+
     const router = useRouter()
     const validationSchema = Yup.object({
         name: Yup.string()
