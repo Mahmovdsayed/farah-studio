@@ -2,7 +2,7 @@ import { connectToDatabase } from "@/lib/dbConnection";
 import Content from "@/models/content.model";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function GET(request: Request) {
   try {
     await connectToDatabase();
 

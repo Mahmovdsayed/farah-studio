@@ -2,7 +2,7 @@ import { connectToDatabase } from "@/lib/dbConnection";
 import newVisitor from "@/models/visitor.model";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function GET(request: Request) {
   connectToDatabase();
   try {
     const totalVisitors = await newVisitor.aggregate([
