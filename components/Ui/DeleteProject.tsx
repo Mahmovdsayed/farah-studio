@@ -15,7 +15,7 @@ const DeleteProject = ({ id }: IProps) => {
 
     return <>
         <Button
-            onClick={onOpen}
+            onPress={onOpen}
             startContent={<MdDelete />} className="w-full font-semibold mt-3" color="danger" radius="sm">
             Delete
         </Button>
