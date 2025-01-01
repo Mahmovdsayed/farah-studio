@@ -1,5 +1,6 @@
 'use client';
 
+import { Chip } from "@nextui-org/react";
 import { motion } from "framer-motion";
 
 const MaintenanceMode = () => {
@@ -36,8 +37,7 @@ const MaintenanceMode = () => {
                     }
                     className=" text-sm md:text-base font-sharpSansSemiBold text-default-700"
                 >
-                    The website is currently unavailable until the outstanding payments
-                    are cleared.
+                    This website is temporarily disabled. If you are the owner, please contact me on Instagram at <span className="font-sharpSansBold">@nest.dev</span>
                 </motion.p>
             </div>
         </div>

@@ -178,12 +178,12 @@ export default function RootLayout({
       >
         <Providers>
           <SmoothScroll>
-            {/* <Header /> */}
+            <Header />
             {children}
             <Analytics />
           </SmoothScroll>
-          {/* <FloatingDockDemo /> */}
-          {/* <Footer /> */}
+          <FloatingDockDemo />
+          <Footer />
         </Providers>
       </body>
     </html>
