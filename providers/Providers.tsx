@@ -8,7 +8,7 @@ import { Toaster } from 'sonner';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 export function Providers({ children }: { children: React.ReactNode }) {
     const router = useRouter()
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [queryClient] = useState(() => new QueryClient());
 
 

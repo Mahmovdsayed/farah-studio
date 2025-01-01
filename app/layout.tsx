@@ -111,7 +111,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isUnderMaintenance = true;
+  const isUnderMaintenance = false;
   if (isUnderMaintenance) {
     return (
       <html lang="en" className='dark'>
