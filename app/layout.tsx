@@ -8,6 +8,7 @@ import { FloatingDockDemo } from "@/components/Layout/FooterLinks";
 import SmoothScroll from "@/components/Layout/SmoothScroll";
 import Footer from "@/components/Layout/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import MaintenanceMode from "@/components/Layout/MaintenanceMode";
 
 const sharpSansBold = localFont({
   src: "./fonts/SharpSansBold.woff",
@@ -110,6 +111,46 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isUnderMaintenance = true;
+  if (isUnderMaintenance) {
+    return (
+      <html lang="en" className='dark'>
+        <body
+          className={`
+            ${sharpSansBold.variable}
+            ${sharpSansBoldItalic.variable}
+            
+            ${sharpSansItalic.variable}
+            ${sharpSansLight.variable}
+            ${sharpSansLightItalic.variable}
+            ${sharpSansMedium.variable}
+            ${sharpSansMediumItalic.variable}
+            ${sharpSansSemiBold.variable}
+            ${sharpSansSemiBoldItalic.variable}
+            ${sharpSansThin.variable}
+            ${sharpSansThinItalic.variable}
+            ${RoustelRegular.variable}
+            antialiased
+            bg-[#0E100F]
+            text-[#FEFCE1]
+             min-h-[100dvh]
+              overflow-x-hidden
+              relative
+            `}
+        >
+          <Providers>
+            <SmoothScroll>
+              {/* <Header /> */}
+              <MaintenanceMode />
+              <Analytics />
+            </SmoothScroll>
+            {/* <FloatingDockDemo /> */}
+            {/* <Footer /> */}
+          </Providers>
+        </body>
+      </html>
+    );
+  }
   return (
     <html lang="en" className='dark'>
       <body
@@ -137,12 +178,12 @@ export default function RootLayout({
       >
         <Providers>
           <SmoothScroll>
-            <Header />
+            {/* <Header /> */}
             {children}
             <Analytics />
           </SmoothScroll>
-          <FloatingDockDemo />
-          <Footer />
+          {/* <FloatingDockDemo /> */}
+          {/* <Footer /> */}
         </Providers>
       </body>
     </html>
