@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 interface IProps { }
 
 const Footer = ({ }: IProps) => {
+const year = new Date().getFullYear();
     const router = useRouter()
     return (
         <div className=" bg-gradient-to-b from-[#0E100F] to-black p-4 mt-14  transform ">
@@ -24,7 +25,7 @@ const Footer = ({ }: IProps) => {
             </div>
 
             <div className="flex flex-col items-center justify-center border-t border-dashed opacity-75">
-                <p className="mt-3 text-tiny md:text-base flex items-center gap-1">© 2024 <span className="font-instrument-serif font-sharpSansSemiBold">Farah Studio</span>. All Rights Reserved</p>
+                <p className="mt-3 text-tiny md:text-base flex items-center gap-1">© {year} <span className="font-instrument-serif font-sharpSansSemiBold">Farah Studio</span>. All Rights Reserved</p>
                 <p className="mt-2 text-tiny md:text-base flex items-center gap-1">Powered by <span onClick={() => router.push("https://www.instagram.com/nest.dev/")} className="font-sharpSansBold cursor-pointer hover:underline">NEST</span></p>
             </div>
         </div>
