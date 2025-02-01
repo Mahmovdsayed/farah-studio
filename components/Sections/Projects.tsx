@@ -32,7 +32,7 @@ const Projects = () => {
     if (isError) return <div>Error fetching data</div>;
 
     return (
-        <main className="min-h-screen">
+     
             <div className="container mx-auto px-4 py-6">
                 <Tabs
                     color="secondary"
@@ -129,7 +129,6 @@ const Projects = () => {
                     ></Tab>
                 </Tabs>
             </div>
-        </main>
     );
 };
 
