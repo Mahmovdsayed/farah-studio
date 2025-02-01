@@ -42,29 +42,6 @@ const Projects = () => {
                     className="font-sharpSansSemiBold flex items-center justify-center pb-2"
                 >
                     <Tab
-                        key={"social"}
-                        title={
-                            <div className="flex items-center space-x-2">
-                                <GalleryIcon />
-                                <span>Social Media</span>
-                            </div>
-                        }
-                    >
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {data?.social.map((rel: any, index: number) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5 }}
-                                >
-                                    <GalleryCard url={rel.url} />
-                                </motion.div>
-                            ))}
-                        </div>
-                    </Tab>
-
-                    <Tab
                         key={"reels"}
                         title={
                             <div className="flex items-center space-x-2">
@@ -119,7 +96,28 @@ const Projects = () => {
                             })}
                         </div>
                     </Tab>
-
+                    <Tab
+                        key={"social"}
+                        title={
+                            <div className="flex items-center space-x-2">
+                                <GalleryIcon />
+                                <span>Social Media</span>
+                            </div>
+                        }
+                    >
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {data?.social.map((rel: any, index: number) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    <GalleryCard url={rel.url} />
+                                </motion.div>
+                            ))}
+                        </div>
+                    </Tab>
                     <Tab
                         isDisabled
                         title={
