@@ -51,7 +51,7 @@ const Projects = () => {
     if (isError) return <div>Error fetching data</div>;
 
     return (
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-1 py-6">
             <Tabs
                 color="secondary"
                 size="sm"
