@@ -25,7 +25,9 @@ export async function generateMetadata({
 const page = () => {
 
     return <>
+ <main className="min-h-[100dvh] overflow-x-hidden">
         <Projects />
+ </main>
     </>;
 };
 
