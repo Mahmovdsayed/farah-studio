@@ -23,6 +23,10 @@ interface Reel {
 const Projects = ({ data }: { data: any }) => {
     useVisitorTracker("/projects", "Projects");
 
+    const fetchProjectsData = async () => {
+        const response = await axiosInstance.get("/projects");
+        return response.data;
+    };
 
     const [isVideoLoading, setVideoLoading] = useState(true);
     const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc"); // default to descending (newest first)
@@ -98,25 +102,13 @@ const Projects = ({ data }: { data: any }) => {
                                 className="rounded-xl"
                                 transition={{ duration: 0.5 }}
                             >
-                                {isVideoLoading ? (
-                                    <div
-                                        className="flex gap-4 justify-center items-center bg-custom-gradient font-sharpSansSemiBold"
-                                        style={{
-                                            width: "100%",
-                                            height: "300px",
-                                            borderRadius: "12px",
-                                        }}
-                                    >
-                                        <Spinner color="secondary" size="md" /> Loading video...
-                                    </div>
-                                ) : null}
                                 <div className="md:hidden">
                                     <ReactPlayer
                                         url={rel.url}
                                         controls
                                         width="100%"
+                                        light
                                         height="300px"
-                                        onReady={() => setVideoLoading(false)}
                                     />
                                 </div>
                                 <div className="hidden md:block">
@@ -125,9 +117,7 @@ const Projects = ({ data }: { data: any }) => {
                                         controls
                                         width="100%"
                                         height="600px"
-
-
-                                        onReady={() => setVideoLoading(false)}
+                                        light
                                         config={{
                                             youtube: {
                                                 playerVars: {
