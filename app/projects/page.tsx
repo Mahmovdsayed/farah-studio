@@ -1,4 +1,5 @@
 import Projects from "@/components/Sections/Projects";
+import axiosInstance from "@/lib/axiosInstance";
 import { Metadata } from "next";
 
 export async function generateMetadata({
@@ -21,13 +22,17 @@ export async function generateMetadata({
 
 
 }
+const fetchProjectsData = async () => {
+    const response = await axiosInstance.get("/projects");
+    return response.data;
+};
 
-const page = () => {
-
+const page = async () => {
+    const data = await fetchProjectsData()
     return <>
- <main className="min-h-[100dvh] overflow-x-hidden">
-        <Projects />
- </main>
+        <main className="min-h-[100dvh] overflow-x-hidden">
+            <Projects data={data} />
+        </main>
     </>;
 };
 

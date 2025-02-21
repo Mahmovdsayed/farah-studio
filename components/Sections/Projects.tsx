@@ -17,25 +17,16 @@ import { BiSort } from "react-icons/bi";
 interface Reel {
     createdAt: string;
     url: string;
+
 }
 
-const Projects = () => {
+const Projects = ({ data }: { data: any }) => {
     useVisitorTracker("/projects", "Projects");
 
-    const fetchProjectsData = async () => {
-        const response = await axiosInstance.get("/projects");
-        return response.data;
-    };
 
     const [isVideoLoading, setVideoLoading] = useState(true);
     const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc"); // default to descending (newest first)
 
-    const { data, isLoading, isError } = useQuery({
-        queryFn: fetchProjectsData,
-        queryKey: ["projects"],
-        staleTime: 1000 * 60 * 60,
-        refetchOnWindowFocus: false,
-    });
 
     const sortReels = (reels: Reel[], order: "asc" | "desc"): Reel[] => {
         return reels.sort((a, b) => {
@@ -47,11 +38,9 @@ const Projects = () => {
 
     const sortedReels = data?.reels ? sortReels([...data.reels], sortOrder) : [];
 
-    if (isLoading) return <div className="flex items-center justify-center my-6"><Spinner color="secondary" /></div>;
-    if (isError) return <div>Error fetching data</div>;
 
     return (
-        <div className="container mx-auto px-1 py-6">
+        <div className="container mx-auto px-1  py-6">
             <Tabs
                 color="secondary"
                 size="sm"
