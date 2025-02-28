@@ -8,7 +8,6 @@ import { IoMdAdd } from "react-icons/io";
 import { FaCheck } from "react-icons/fa";
 import * as Yup from 'yup';
 import { useFormik } from "formik";
-import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import {
     Modal,
@@ -20,15 +19,15 @@ import {
 } from "@nextui-org/modal";
 import AddContent from "@/func/Content";
 import { useState } from "react";
-import axiosInstance from "@/lib/axiosInstance";
 import { QueryClient, useQuery, useQueryClient } from "@tanstack/react-query";
 import GalleryCard from "../Ui/GalleryCard";
 import { MdDelete } from "react-icons/md";
 import DeleteProject from "../Ui/DeleteProject";
 import ReactPlayer from "react-player";
+import axios from "axios"
 
 const fetchProjectsData = async () => {
-    const response = await axiosInstance.get("/projects");
+    const response = await axios.get("api/projects");
     return response.data;
 };
 
@@ -40,6 +39,7 @@ const ProjectsDashboard = () => {
         staleTime: 1000 * 60 * 60,
         refetchOnWindowFocus: false,
     });
+    console.log(data)
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
     const [isLoadingVideo, setIsLoading] = useState(true); // State for video loading
 

@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Line, Bar } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, PointElement, LineElement } from "chart.js";
-import axiosInstance from "@/lib/axiosInstance";
 import { Card, Spinner } from "@nextui-org/react";
+import axios from "axios"
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, PointElement, LineElement);
 
 const fetchVisitorData = async () => {
-    const response = await axiosInstance.get("/analytics");
+    const response = await axios.get("api/analytics");
     return response.data;
 };
 
