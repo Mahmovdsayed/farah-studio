@@ -1,5 +1,5 @@
 import Projects from "@/components/Sections/Projects";
-import axiosInstance from "@/lib/axiosInstance";
+import axios from "axios"
 import { Metadata } from "next";
 
 export async function generateMetadata({
@@ -23,7 +23,7 @@ export async function generateMetadata({
 
 }
 const fetchProjectsData = async () => {
-    const response = await axiosInstance.get("/projects");
+    const response = await axios.get("api/projects");
     return response.data;
 };
 

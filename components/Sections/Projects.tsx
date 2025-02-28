@@ -23,10 +23,10 @@ interface Reel {
 const Projects = ({ data }: { data: any }) => {
     useVisitorTracker("/projects", "Projects");
 
-    const fetchProjectsData = async () => {
-        const response = await axios.get("api/projects");
-        return response.data;
-    };
+    // const fetchProjectsData = async () => {
+    //     const response = await axios.get("api/projects");
+    //     return response.data;
+    // };
 
     const [isVideoLoading, setVideoLoading] = useState(true);
     const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc"); // default to descending (newest first)
