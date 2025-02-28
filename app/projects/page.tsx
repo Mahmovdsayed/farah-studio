@@ -23,8 +23,8 @@ export async function generateMetadata({
 
 }
 const fetchProjectsData = async () => {
-    const response = await axios.get("api/projects");
-    return response.data;
+    const { data } = await axios.get("https://farah-studio.vercel.app/api/projects");
+    return data;
 };
 
 const page = async () => {
