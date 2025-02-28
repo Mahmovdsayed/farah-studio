@@ -9,10 +9,10 @@ import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 import { FaFigma, FaPlay } from "react-icons/fa";
 import React, { useState } from "react";
-import axiosInstance from "@/lib/axiosInstance";
 import { useQuery } from "@tanstack/react-query";
 import useVisitorTracker from "@/hooks/useVisitorTracker";
 import { BiSort } from "react-icons/bi";
+import axios from "axios"
 
 interface Reel {
     createdAt: string;
@@ -24,7 +24,7 @@ const Projects = ({ data }: { data: any }) => {
     useVisitorTracker("/projects", "Projects");
 
     const fetchProjectsData = async () => {
-        const response = await axiosInstance.get("/projects");
+        const response = await axios.get("api/projects");
         return response.data;
     };
 
