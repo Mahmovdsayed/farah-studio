@@ -13,6 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import useVisitorTracker from "@/hooks/useVisitorTracker";
 import { BiSort } from "react-icons/bi";
 import axios from "axios"
+import { Iphone15Pro } from "../Ui/Iphone15Pro";
 
 interface Reel {
     createdAt: string;
@@ -93,7 +94,7 @@ const Projects = ({ data }: { data: any }) => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                         {sortedReels.map((rel, index) => (
                             <motion.div
                                 key={index}
@@ -102,7 +103,7 @@ const Projects = ({ data }: { data: any }) => {
                                 className="rounded-xl"
                                 transition={{ duration: 0.5 }}
                             >
-                                <div className="md:hidden">
+                                <div className="hidden">
                                     <ReactPlayer
                                         url={rel.url}
                                         controls
@@ -111,8 +112,8 @@ const Projects = ({ data }: { data: any }) => {
                                         height="300px"
                                     />
                                 </div>
-                                <div className="hidden md:block">
-                                    <ReactPlayer
+                                <div className=" block relative">
+                                    {/* <ReactPlayer
                                         url={rel.url}
                                         controls
                                         width="100%"
@@ -127,6 +128,10 @@ const Projects = ({ data }: { data: any }) => {
                                                 },
                                             },
                                         }}
+                                    /> */}
+                                    <Iphone15Pro
+                                        className="size-full"
+                                        videoSrc={`https://videos.pexels.com/video-files/8946986/8946986-uhd_1440_2732_25fps.mp4`}
                                     />
                                 </div>
                             </motion.div>

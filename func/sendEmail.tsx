@@ -1,7 +1,7 @@
 'use server'
 import sendEmailService from "@/lib/email"
 
-const Email = async (name: string, email: string, info: string, services: any) => {
+const Email = async (name: string, phone: string, info: string, services: any) => {
     await sendEmailService({
         subject: `New Request from Farah Studio`,
         message: `
@@ -87,7 +87,7 @@ const Email = async (name: string, email: string, info: string, services: any) =
                             <p>We have received a new request through the contact form on <strong>Farah Studio</strong>. Here are the details:</p>
                             <ul>
                                 <li><strong>Name:</strong> <span class="highlight">${name}</span></li>
-                                <li><strong>Email:</strong> <span class="highlight">${email}</span></li>
+                                <li><strong>Phone Number:</strong> <span class="highlight">${phone}</span></li>
                                 <li><strong>Requested Services:</strong> <span class="highlight">${info}</span></li>
                                 <br/>
                                 <li><strong>Project Details:</strong> <span class="highlight">${services}</span></li>

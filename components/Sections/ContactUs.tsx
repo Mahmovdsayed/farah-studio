@@ -21,10 +21,10 @@ const ContactUs = ({ }: IProps) => {
             .required("Name is required")
             .max(20, "Name max length is 20")
             .min(3, "Name must be at least 3 characters"),
-        email: Yup.string()
-            .required("Email is required")
-            .email("Invalid email address")
-            .lowercase("email must be in lowercase"),
+        phoneNumber: Yup.number()
+            .required("Phone number is required"),
+
+
         projectInfo: Yup.string()
             .required("Project info is required")
             .min(10, "Project info must be at least 10 characters"),
@@ -37,14 +37,14 @@ const ContactUs = ({ }: IProps) => {
     let formik = useFormik({
         initialValues: {
             name: "",
-            email: "",
+            phoneNumber: "",
             projectInfo: "",
             terms: false,
             services: [],
         },
         validationSchema,
         onSubmit: (values: any) => {
-            Email(values.name, values.email, values.services.join(", "), values.projectInfo);
+            Email(values.name, values.phoneNumber, values.services.join(", "), values.projectInfo);
             formik.resetForm();
             router.push("/")
             toast.success("Your message has been sent successfully. We will get back to you shortly!", {
@@ -107,20 +107,21 @@ const ContactUs = ({ }: IProps) => {
                         <Input
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
-                            id="email"
-                            name="email"
-                            value={formik.values.email}
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            value={formik.values.phoneNumber}
                             className="font-sharpSansMedium"
+                            description="Please enter your WhatsApp number. We will contact you via WhatsApp."
                             variant="underlined"
                             color="secondary"
-                            label="Email"
+                            label="Phone Number"
                             labelPlacement="outside"
-                            placeholder="Enter your Email"
+                            placeholder="Enter your Number"
                             type="text" />
 
-                        {formik.errors.email && formik.touched.email ? (
+                        {formik.errors.phoneNumber && formik.touched.phoneNumber ? (
                             <div className="mt-2 font-sharpSansMedium">
-                                <Alert color="warning" title={formik.errors.email} />
+                                <Alert color="warning" title={formik.errors.phoneNumber} />
                             </div>
                         ) : ""}
                     </motion.div>
