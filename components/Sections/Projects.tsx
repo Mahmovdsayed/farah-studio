@@ -103,7 +103,7 @@ const Projects = ({ data }: { data: any }) => {
                                 className="rounded-xl"
                                 transition={{ duration: 0.5 }}
                             >
-                                <div className="hidden">
+                                <div className="block lg:hidden">
                                     <ReactPlayer
                                         url={rel.url}
                                         controls
@@ -112,7 +112,7 @@ const Projects = ({ data }: { data: any }) => {
                                         height="300px"
                                     />
                                 </div>
-                                <div className=" block relative">
+                                <div className=" lg:block relative">
                                     <ReactPlayer
                                         url={rel.url}
                                         controls
