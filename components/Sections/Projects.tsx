@@ -112,7 +112,7 @@ const Projects = ({ data }: { data: any }) => {
                                         height="300px"
                                     />
                                 </div>
-                                <div className=" lg:block relative">
+                                <div className="hidden lg:block relative">
                                     <ReactPlayer
                                         url={rel.url}
                                         controls
