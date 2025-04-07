@@ -114,7 +114,8 @@ const Projects = () => {
                             >
                                 <div className="block lg:hidden">
                                     <ReactPlayer
-                                        url={rel.url}
+                                        url={rel.url} 
+                                        // t
                                         controls
                                         width="100%"
                                         // light
