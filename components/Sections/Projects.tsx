@@ -117,7 +117,7 @@ const Projects = () => {
                                         url={rel.url}
                                         controls
                                         width="100%"
-                                        light
+                                        // light
                                         height="300px"
                                     />
                                 </div>
@@ -127,7 +127,7 @@ const Projects = () => {
                                         controls
                                         width="100%"
                                         height="600px"
-                                        light
+                                        // light
                                         config={{
                                             youtube: {
                                                 playerVars: {
