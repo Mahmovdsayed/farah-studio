@@ -22,16 +22,12 @@ export async function generateMetadata({
 
 
 }
-const fetchProjectsData = async () => {
-    const { data } = await axios.get("https://farah-studio.vercel.app/api/projects");
-    return data;
-};
+
 
 const page = async () => {
-    const data = await fetchProjectsData()
     return <>
         <main className="min-h-[100dvh] overflow-x-hidden">
-            <Projects data={data} />
+            <Projects  />
         </main>
     </>;
 };
