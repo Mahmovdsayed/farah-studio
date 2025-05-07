@@ -1,5 +1,5 @@
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "@/providers/Providers";
@@ -106,51 +106,22 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isUnderMaintenance = false;
-  if (isUnderMaintenance) {
-    return (
-      <html lang="en" className='dark'>
-        <body
-          className={`
-            ${sharpSansBold.variable}
-            ${sharpSansBoldItalic.variable}
-            
-            ${sharpSansItalic.variable}
-            ${sharpSansLight.variable}
-            ${sharpSansLightItalic.variable}
-            ${sharpSansMedium.variable}
-            ${sharpSansMediumItalic.variable}
-            ${sharpSansSemiBold.variable}
-            ${sharpSansSemiBoldItalic.variable}
-            ${sharpSansThin.variable}
-            ${sharpSansThinItalic.variable}
-            ${RoustelRegular.variable}
-            antialiased
-            bg-[#0E100F]
-            text-[#FEFCE1]
-             min-h-[100dvh]
-              overflow-x-hidden
-              relative
-            `}
-        >
-          <Providers>
-            <SmoothScroll>
-              {/* <Header /> */}
-              <MaintenanceMode />
-              <Analytics />
-            </SmoothScroll>
-            {/* <FloatingDockDemo /> */}
-            {/* <Footer /> */}
-          </Providers>
-        </body>
-      </html>
-    );
-  }
   return (
     <html lang="en" className='dark'>
       <body
